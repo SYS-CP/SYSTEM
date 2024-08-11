@@ -1,16 +1,20 @@
-import requests
-import random
-
 def m1():
+    # قائمة من السلاسل النصية 
     user_agents = [
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+"[FBAN/FB4A;FBAV/199.0.0.50.87;FBBV/40483461;FBDM/{density=3.6,width=1153,height=1883};FBLC/it_IT;FBRV/40483461;FBCR/T-Mobile;FBMF/sony;FBBD/Asus Zenfone 6;FBPN/com.facebook.katana;FBDV/Huawei_8932;FBSV/4.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/130.0.0.35.32;FBBV/42370225;FBDM/{density=3.0,width=1056,height=2541};FBLC/it_IT;FBRV/42370225;FBCR/PosteMobile;FBMF/nokia;FBBD/Xiaomi Mi 9;FBPN/com.facebook.katana;FBDV/OnePlus_9365;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/137.0.0.41.24;FBBV/45032385;FBDM/{density=2.8,width=1077,height=1986};FBLC/it_IT;FBRV/45032385;FBCR/PosteMobile;FBMF/huawei;FBBD/Oppo Reno 2;FBPN/com.facebook.katana;FBDV/Google_2378;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]",
-        "[FBAN/FB4A;FBAV/"+str(random.randint(49,66))+'.0.0.'+str(random.randrange(20,49))+str(random.randint(11,99)) +";FBBV/"+str(random.randint(11111111,77777777))+";[FBAN/FB4A;FBAV/178.0.0.31.12;FBBV/43693335;FBDM/{density=3.9,width=903,height=1416};FBLC/it_IT;FBRV/43693335;FBCR/Orange;FBMF/nokia;FBBD/Sony Xperia 5;FBPN/com.facebook.katana;FBDV/OnePlus_3671;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]"
+        "[FBAN/Orca-Android;FBAV/389.82.82.70;FBPN/com.facebook.orca;FBLC/en_US;FBBV/229794100;FBCR/Verizon;FBMF/samsung;FBBD/samsung;FBDV/OnePlus 9 Pro;FBSV/11;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=2.5,width=1440,height=2280};FB_FW/1;FBRV/313069716]",
+        "[FBAN/FB4A;FBAV/273.53.28.81;FBPN/com.facebook.orca;FBLC/en_US;FBBV/783344860;FBCR/Vodafone;FBMF/samsung;FBBD/samsung;FBDV/iPhone 13 Pro Max;FBSV/13;FBCA/arm64-v8a:armeabi-v7a:armeabi;FBDM/{density=2.0,width=1080,height=2560};FB_FW/1;FBRV/135687226]"
     ]
 
-    return random.choice(user_agents)
+    # دمج السلاسل النصية في سلسلة واحدة 
+    return ";".join(user_agents) 
 
+# استخدام الدالة 
+user_agent = m1()
 
-url = 'https://www.facebook.com/login'
-headers = {'User-Agent': m1()}
+# استخدم  user_agent  في طلبات API 
+token = '7244277412:AAFUXBZ1SjvF-z0hUGrJW3tS5jd8ropROVI'
+ID = '5210419138'
+message = "خش واحد لي اداة" 
+
+headers = {'User-Agent': user_agent}
+requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={message}', headers=headers)
