@@ -1,21 +1,16 @@
+import requests
 import random
 
 def m1():
-    ua_list = [
-        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." +
-        str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" +
-        str(random.randint(11111111, 77777777)) + ";FBAN/Orca-Android;FBAV/188.34.64.45;" +
-        "FBPN/com.facebook.orca;FBLC/en_US;FBBV/21585786;FBCR/AT&T;FBMF/infinix;" +
-        "FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/4.1;FBCA/arm64-v8a;FBDM/" +
-        "{density=1.6,width=1206,height=1630};FB_FW/1;FBRV/65686245]",
-        
-        "[FBAN/Orca-Android;FBAV/104.70.70.24;FBPN/com.facebook.orca;FBLC/en_US;" +
-        "FBBV/99223089;FBCR/AT&T;FBMF/Oppo;FBBD/Oppo;FBDV/GALAXY S24 ULTRA;" +
-        "FBSV/5.9;FBCA/arm64-v8a;FBDM/{density=1.9,width=743,height=1480};" +
-        "FB_FW/1;FBRV/23504542]"
+    user_agents = [
+        "[FBAN/FB4A;FBAV/393.50.12.54;FBBV/954242441;FBDM/{density=3.5,width=1440,height=2560};FBLC/en_US;FBRV/489037986;FBCR/Orange;FBMF/Realme;FBBD/Realme;FBPN/com.facebook.katana;FBDV/Realme;FBSV/9.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/271.62.87.78;FBBV/159899496;FBDM/{density=3.5,width=1080,height=1920};FBLC/en_US;FBRV/835549788;FBCR/Vodafone;FBMF/Motorola;FBBD/Motorola;FBPN/com.facebook.katana;FBDV/Motorola;FBSV/8.6;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/388.20.52.2;FBBV/763440703;FBDM/{density=3.5,width=1080,height=1920};FBLC/en_US;FBRV/493182850;FBCR/AT&T;FBMF/Xiaomi;FBBD/Xiaomi;FBPN/com.facebook.katana;FBDV/Xiaomi;FBSV/12.9;FBOP/1;FBCA/armeabi-v7a:armeabi;]",
+        "[FBAN/FB4A;FBAV/250.1.23.27;FBBV/835717293;FBDM/{density=3.0,width=1440,height=2560};FBLC/en_US;FBRV/281591890;FBCR/Verizon;FBMF/Xiaomi;FBBD/Xiaomi;FBPN/com.facebook.katana;FBDV/Xiaomi;FBSV/12.5;FBOP/1;FBCA/armeabi-v7a:armeabi;]"
     ]
-    
-    return random.choice(ua_list)
 
-# Generate a random user agent string
-ua = m1()
+    return random.choice(user_agents)
+
+
+url = 'https://www.facebook.com/login'
+headers = {'User-Agent': m1()} 
