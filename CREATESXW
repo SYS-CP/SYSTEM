@@ -1,1 +1,21 @@
-import os
+import random
+
+def m1():
+    ua_list = [
+        "[FBAN/FB4A;FBAV/" + str(random.randint(49, 66)) + ".0.0." +
+        str(random.randrange(20, 49)) + str(random.randint(11, 99)) + ";FBBV/" +
+        str(random.randint(11111111, 77777777)) + ";FBAN/Orca-Android;FBAV/188.34.64.45;" +
+        "FBPN/com.facebook.orca;FBLC/en_US;FBBV/21585786;FBCR/AT&T;FBMF/infinix;" +
+        "FBBD/infinix;FBDV/GALAXY S24 ULTRA;FBSV/4.1;FBCA/arm64-v8a;FBDM/" +
+        "{density=1.6,width=1206,height=1630};FB_FW/1;FBRV/65686245]",
+        
+        "[FBAN/Orca-Android;FBAV/104.70.70.24;FBPN/com.facebook.orca;FBLC/en_US;" +
+        "FBBV/99223089;FBCR/AT&T;FBMF/Oppo;FBBD/Oppo;FBDV/GALAXY S24 ULTRA;" +
+        "FBSV/5.9;FBCA/arm64-v8a;FBDM/{density=1.9,width=743,height=1480};" +
+        "FB_FW/1;FBRV/23504542]"
+    ]
+    
+    return random.choice(ua_list)
+
+# Generate a random user agent string
+ua = m1()
