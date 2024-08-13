@@ -1,1 +1,17 @@
+model_build = random.choice(["Samsung", "Kaios", "Realme", "Nokia", "infinix", "Oppo", "Qmobile"])
+android_version = f"Android {random.randint(4, 10)}.{random.randint(0, 9)}.{random.randint(0, 9)}"
+facebook_version = f"{random.randint(100, 200)}.{random.randint(0, 100)}.{random.randint(0, 100)}.{random.randint(0, 100)}"
+fbbv = str(random.randint(10000000, 99999999))
+fbrv = str(random.randint(10000000, 99999999))
+fbsv = f"{random.uniform(4.0, 10.0):.1f}"
+density = random.uniform(1.0, 4.0)
+width = random.randint(720, 1440)
+height = random.randint(1280, 2560)
+network_carriers = ["Verizon", "AT&T", "T-Mobile", "Sprint"]
+network_carrier = random.choice(network_carriers)
+network_type = random.choice(["WiFi", "4G", "3G"])
+ip_address = f"{random.randint(1, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(1, 255)}"
+
+# إنشاء user_agent
+user_agent = f"[FBAN/Orca-Android;FBAV/{facebook_version};FBPN/com.facebook.orca;FBLC/en_US;FBBV/{fbbv};FBCR/{network_carrier};FBMF/{model_build};FBBD/{model_build};FBDV/GALAXY S24 ULTRA;FBSV/{fbsv};FBCA/arm64-v8a;FBDM/{{density={density:.1f},width={width},height={height}}};FB_FW/1;FBRV/{fbrv}]"
 
